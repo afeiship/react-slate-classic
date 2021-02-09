@@ -5,13 +5,20 @@ import ReactSlateClassic from '../src/main';
 import './assets/style.scss';
 
 class App extends React.Component {
+  state = { value: '<p>hello</p>' };
   render() {
     return (
       <ReactDemokit
         className="p-3 app-container"
         url="https://github.com/afeiship/react-slate-classic">
-        <ReactSlateClassic className="mb-5 has-text-white" />
-        <button className="button is-primary is-fullwidth">Start~</button>
+        <ReactSlateClassic
+          value={this.state.value}
+          onChange={(e) => {
+            console.log('onclick:', e);
+            this.setState({ value: e.target.value });
+          }}
+          className="mb-5"
+        />
       </ReactDemokit>
     );
   }
