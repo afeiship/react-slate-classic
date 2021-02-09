@@ -1,0 +1,10 @@
+$react-slate-classic-options: () !default;
+
+.react-slate-classic {
+  // your styles
+  color: red;
+  font-size: 12px;
+  &:active {
+    color: black;
+  }
+}
