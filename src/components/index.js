@@ -20,10 +20,12 @@ import BulletedList from '@jswork/slate-plugin-bulleted-list';
 import NumberedList from '@jswork/slate-plugin-numbered-list';
 import ListItem from '@jswork/slate-plugin-list-item';
 import Paragraph from '@jswork/slate-plugin-paragraph';
+import FontSize from '@jswork/slate-plugin-font-size';
 import Default from '@jswork/slate-plugin-default';
 import Bisu from './bisu';
 import Alignment from './alignment';
 import HeadingUi from './heading';
+import FontSizeUi from './font-size';
 import { Editor } from 'slate';
 
 const CLASS_NAME = 'react-slate-classic';
@@ -71,6 +73,7 @@ export default class ReactSlateClassic extends Component {
       NumberedList,
       ListItem,
       Paragraph,
+      FontSize,
       Default
     ];
   }
@@ -94,6 +97,7 @@ export default class ReactSlateClassic extends Component {
             <Bisu editor={editor} />
             <Alignment editor={editor} />
             <HeadingUi editor={editor} />
+            <FontSizeUi editor={editor} />
           </Toolbar>
         )}
         <ReactRteSlate
