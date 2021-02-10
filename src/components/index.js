@@ -23,6 +23,7 @@ import Paragraph from '@jswork/slate-plugin-paragraph';
 import Default from '@jswork/slate-plugin-default';
 import Bisu from './bisu';
 import Alignment from './alignment';
+import HeadingUi from './heading';
 import { Editor } from 'slate';
 
 const CLASS_NAME = 'react-slate-classic';
@@ -76,7 +77,6 @@ export default class ReactSlateClassic extends Component {
 
   handleInit = (inEvent) => {
     const { value, manager } = inEvent.target;
-    console.log(value);
     window.editor = value;
     window.Editor = Editor;
     this.setState({ editor: value, manager });
@@ -93,6 +93,7 @@ export default class ReactSlateClassic extends Component {
           <Toolbar>
             <Bisu editor={editor} />
             <Alignment editor={editor} />
+            <HeadingUi editor={editor} />
           </Toolbar>
         )}
         <ReactRteSlate
