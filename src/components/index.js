@@ -22,6 +22,7 @@ import ListItem from '@jswork/slate-plugin-list-item';
 import Paragraph from '@jswork/slate-plugin-paragraph';
 import Default from '@jswork/slate-plugin-default';
 import Bisu from './bisu';
+import Alignment from './alignment';
 import { Editor } from 'slate';
 
 const CLASS_NAME = 'react-slate-classic';
@@ -91,6 +92,7 @@ export default class ReactSlateClassic extends Component {
         {editor && (
           <Toolbar>
             <Bisu editor={editor} />
+            <Alignment editor={editor} />
           </Toolbar>
         )}
         <ReactRteSlate
