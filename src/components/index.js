@@ -21,7 +21,9 @@ import NumberedList from '@jswork/slate-plugin-numbered-list';
 import ListItem from '@jswork/slate-plugin-list-item';
 import Paragraph from '@jswork/slate-plugin-paragraph';
 import Default from '@jswork/slate-plugin-default';
+import Bisu from './bisu';
 import { Editor } from 'slate';
+
 const CLASS_NAME = 'react-slate-classic';
 
 export default class ReactSlateClassic extends Component {
@@ -82,27 +84,13 @@ export default class ReactSlateClassic extends Component {
   render() {
     const { className, ...props } = this.props;
     const { editor } = this.state;
-    console.log(editor && Bold.commands.is(editor));
     return (
       <div
         data-component={CLASS_NAME}
         className={classNames('wsui-rte-icons', CLASS_NAME, className)}>
         {editor && (
           <Toolbar>
-            <ButtonGroup className="wsui-rte-icons">
-              <Button active={Bold.commands.is(editor)} tooltip="加粗">
-                <i className="wsui-icon-bold" />
-              </Button>
-              <Button tooltip="倾斜">
-                <i className="wsui-icon-italic" />
-              </Button>
-              <Button tooltip="删除线">
-                <i className="wsui-icon-strikethrough" />
-              </Button>
-              <Button tooltip="下滑线">
-                <i className="wsui-icon-underline" />
-              </Button>
-            </ButtonGroup>
+            <Bisu editor={editor} />
           </Toolbar>
         )}
         <ReactRteSlate
