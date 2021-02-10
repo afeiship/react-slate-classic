@@ -21,7 +21,7 @@ import NumberedList from '@jswork/slate-plugin-numbered-list';
 import ListItem from '@jswork/slate-plugin-list-item';
 import Paragraph from '@jswork/slate-plugin-paragraph';
 import Default from '@jswork/slate-plugin-default';
-
+import { Editor } from 'slate';
 const CLASS_NAME = 'react-slate-classic';
 
 export default class ReactSlateClassic extends Component {
@@ -47,34 +47,67 @@ export default class ReactSlateClassic extends Component {
     onChange: noop
   };
 
-  handleClick = () => {
-    console.log('click me!');
+  constructor(inProps) {
+    super(inProps);
+    this.state = {
+      editor: null,
+      manager: null
+    };
+    this.plugins = [
+      Bold,
+      Italic,
+      Underline,
+      Strikethrough,
+      Code,
+      Heading,
+      Blockquote,
+      Color,
+      BackgroundColor,
+      BulletedList,
+      NumberedList,
+      ListItem,
+      Paragraph,
+      Default
+    ];
+  }
+
+  handleInit = (inEvent) => {
+    const { value, manager } = inEvent.target;
+    console.log(value);
+    window.editor = value;
+    window.Editor = Editor;
+    this.setState({ editor: value, manager });
   };
 
   render() {
     const { className, ...props } = this.props;
-    console.log(props);
+    const { editor } = this.state;
+    console.log(editor && Bold.commands.is(editor));
     return (
       <div
         data-component={CLASS_NAME}
-        className={classNames(CLASS_NAME, className)}>
+        className={classNames('wsui-rte-icons', CLASS_NAME, className)}>
+        {editor && (
+          <Toolbar>
+            <ButtonGroup className="wsui-rte-icons">
+              <Button active={Bold.commands.is(editor)} tooltip="加粗">
+                <i className="wsui-icon-bold" />
+              </Button>
+              <Button tooltip="倾斜">
+                <i className="wsui-icon-italic" />
+              </Button>
+              <Button tooltip="删除线">
+                <i className="wsui-icon-strikethrough" />
+              </Button>
+              <Button tooltip="下滑线">
+                <i className="wsui-icon-underline" />
+              </Button>
+            </ButtonGroup>
+          </Toolbar>
+        )}
         <ReactRteSlate
-          plugins={[
-            Bold,
-            Italic,
-            Underline,
-            Strikethrough,
-            Code,
-            Heading,
-            Blockquote,
-            Color,
-            BackgroundColor,
-            BulletedList,
-            NumberedList,
-            ListItem,
-            Paragraph,
-            Default
-          ]}
+          onInit={this.handleInit}
+          plugins={this.plugins}
           {...props}
         />
       </div>

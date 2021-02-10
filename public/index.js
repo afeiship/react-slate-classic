@@ -14,7 +14,6 @@ class App extends React.Component {
         <ReactSlateClassic
           value={this.state.value}
           onChange={(e) => {
-            console.log('onclick:', e);
             this.setState({ value: e.target.value });
           }}
           className="mb-5"
