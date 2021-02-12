@@ -1,4 +1,29 @@
-$react-slate-classic-options: () !default;
+$react-slate-classic-options: (
+  heading: (
+    h1: 24px,
+    h2: 22px,
+    h3: 20px,
+    h4: 18px,
+    h5: 16px,
+    h6: 14px,
+  )
+) !default;
 
 .react-slate-classic {
+  $heading: map-get($react-slate-classic-options, 'heading');
+  @each $name, $value in $heading{
+    #{$name}{
+      font-size: $value;
+    }
+  }
+
+  .react-select{
+    height: 28px;
+    margin-right: 4px;
+  }
+
+  .react-rte__toolbar{
+    display: flex;
+    align-items: center;
+  }
 }
