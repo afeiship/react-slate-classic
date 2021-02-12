@@ -26,6 +26,7 @@ import Bisu from './bisu';
 import Alignment from './alignment';
 import HeadingUi from './heading';
 import FontSizeUi from './font-size';
+import ListUi from './list';
 import { Editor } from 'slate';
 
 const CLASS_NAME = 'react-slate-classic';
@@ -96,6 +97,7 @@ export default class ReactSlateClassic extends Component {
           <Toolbar>
             <Bisu editor={editor} />
             <Alignment editor={editor} />
+            <ListUi editor={editor} />
             <HeadingUi editor={editor} />
             <FontSizeUi editor={editor} />
           </Toolbar>
