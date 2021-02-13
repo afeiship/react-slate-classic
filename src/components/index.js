@@ -54,6 +54,20 @@ export default class ReactSlateClassic extends Component {
     onChange: noop
   };
 
+  get toolbar() {
+    const { editor } = this.state;
+    if (!editor) return null;
+    return (
+      <Toolbar>
+        <Bisu editor={editor} />
+        <Alignment editor={editor} />
+        <ListUi editor={editor} />
+        <HeadingUi editor={editor} />
+        <FontSizeUi editor={editor} />
+      </Toolbar>
+    );
+  }
+
   constructor(inProps) {
     super(inProps);
     this.state = {
@@ -93,15 +107,7 @@ export default class ReactSlateClassic extends Component {
       <div
         data-component={CLASS_NAME}
         className={classNames('wsui-rte-icons', CLASS_NAME, className)}>
-        {editor && (
-          <Toolbar>
-            <Bisu editor={editor} />
-            <Alignment editor={editor} />
-            <ListUi editor={editor} />
-            <HeadingUi editor={editor} />
-            <FontSizeUi editor={editor} />
-          </Toolbar>
-        )}
+        {this.toolbar}
         <ReactRteSlate
           onInit={this.handleInit}
           plugins={this.plugins}

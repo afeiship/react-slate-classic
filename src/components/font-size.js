@@ -19,7 +19,6 @@ export default (inProps) => {
       onChange={(e) => {
         const value = Number(e.target.value);
         Editor.addMark(editor, 'font-size', `${value}px`);
-        // Transforms.setNodes(editor, { style: { fontSize: value } });
       }}
     />
   );

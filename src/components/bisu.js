@@ -13,7 +13,7 @@ export default (inProps) => {
       <Button
         active={Bold.commands.is(editor)}
         tooltip="加粗"
-        onClick={(e) => {
+        onMouseDown={(e) => {
           Bold.commands.toggle(editor, true);
         }}>
         <i className="wsui-icon-bold" />
@@ -21,7 +21,7 @@ export default (inProps) => {
       <Button
         active={Italic.commands.is(editor)}
         tooltip="倾斜"
-        onClick={(e) => {
+        onMouseDown={(e) => {
           Italic.commands.toggle(editor, true);
         }}>
         <i className="wsui-icon-italic" />
@@ -29,7 +29,7 @@ export default (inProps) => {
       <Button
         active={Strikethrough.commands.is(editor)}
         tooltip="删除线"
-        onClick={(e) => {
+        onMouseDown={(e) => {
           Strikethrough.commands.toggle(editor, true);
         }}>
         <i className="wsui-icon-strikethrough" />
@@ -37,7 +37,7 @@ export default (inProps) => {
       <Button
         active={Underline.commands.is(editor)}
         tooltip="下滑线"
-        onClick={(e) => {
+        onMouseDown={(e) => {
           Underline.commands.toggle(editor, true);
         }}>
         <i className="wsui-icon-underline" />

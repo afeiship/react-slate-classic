@@ -110,6 +110,7 @@
     "@jswork/slate-plugin-underline": "^1.0.0",
     "@jswork/wsui-rte-icons": "^1.0.0",
     "classnames": "^2.2.6",
+    "slate-history": "^0.59.0",
     "slate-react": "^0.59.0"
   },
   "publishConfig": {
