@@ -99,6 +99,7 @@
     "@jswork/slate-plugin-code": "^1.0.0",
     "@jswork/slate-plugin-color": "^1.0.1",
     "@jswork/slate-plugin-default": "^1.0.0",
+    "@jswork/slate-plugin-editor-extension": "^1.0.0",
     "@jswork/slate-plugin-font-family": "^1.0.0",
     "@jswork/slate-plugin-font-size": "^1.0.0",
     "@jswork/slate-plugin-heading": "^1.0.0",

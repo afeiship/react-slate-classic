@@ -13,6 +13,7 @@ $react-slate-classic-options: (
   $heading: map-get($react-slate-classic-options, 'heading');
   @each $name, $value in $heading{
     #{$name}{
+      font-weight: bold;
       font-size: $value;
     }
   }

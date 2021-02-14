@@ -22,6 +22,7 @@ import ListItem from '@jswork/slate-plugin-list-item';
 import Paragraph from '@jswork/slate-plugin-paragraph';
 import FontSize from '@jswork/slate-plugin-font-size';
 import Default from '@jswork/slate-plugin-default';
+import EditorExtension from '@jswork/slate-plugin-editor-extension';
 import Bisu from './bisu';
 import Alignment from './alignment';
 import HeadingUi from './heading';
@@ -89,7 +90,8 @@ export default class ReactSlateClassic extends Component {
       ListItem,
       Paragraph,
       FontSize,
-      Default
+      Default,
+      EditorExtension
     ];
   }
 
